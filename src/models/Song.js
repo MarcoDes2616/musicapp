@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
-const Artist = require('./Artist');
 
 const Song = sequelize.define('song', {
     name: {
@@ -17,7 +16,5 @@ const Song = sequelize.define('song', {
     }
 });
 
-Song.belongsToMany(Artist, { through: 'songArtist' })
-Artist.belongsToMany(Song, { through: 'songArtist' })
 
 module.exports = Song;

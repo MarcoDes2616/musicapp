@@ -1,4 +1,4 @@
-const { getAll, create, getOne, remove, update, setGenreArtist } = require('../controllers/artist.controllers');
+const { getAll, create, getOne, remove, update, setArtistGenre } = require('../controllers/artist.controllers');
 const express = require('express');
 
 const artistRouter = express.Router();
@@ -13,6 +13,6 @@ artistRouter.route('/:id')
     .put(update);
 
 artistRouter.route("/:id/genres")
-    .post(setGenreArtist)
+    .post(setArtistGenre)
 
 module.exports = artistRouter;
