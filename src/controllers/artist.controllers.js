@@ -36,10 +36,19 @@ const update = catchError(async(req, res) => {
     return res.json(result[1][0]);
 });
 
+const setGenreArtist = catchError(async(req, res) => {
+    const { id } = req.params;
+    const result = await Artist.findByPk(id);
+    await result.setGenre(req.body)
+    const genre = result.getGenre()
+    return res.json(genre);
+});
+
 module.exports = {
     getAll,
     create,
     getOne,
     remove,
-    update
+    update,
+    setGenreArtist
 }

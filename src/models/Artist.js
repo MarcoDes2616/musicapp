@@ -10,7 +10,7 @@ const Artist = sequelize.define('artist', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    formation_year: {
+    formationYear: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
