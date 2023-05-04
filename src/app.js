@@ -3,7 +3,6 @@ const helmet = require('helmet');
 const cors = require('cors');
 const router = require('./routes');
 const errorHandler = require('./utils/errorHandler');
-const initModels = require('./models/initmodels');
 require('dotenv').config();
 
 

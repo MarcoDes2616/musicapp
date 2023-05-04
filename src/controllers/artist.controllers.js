@@ -38,8 +38,8 @@ const update = catchError(async(req, res) => {
 const setArtistGenre = catchError(async(req, res) => {
     const { id } = req.params;
     const result = await Artist.findByPk(id);
-    // await result.setGenre(req.body)
-    const genre = await result.getGenre()
+    await result.setGenres(req.body)
+    const genre = await result.getGenres()
     return res.json(genre);
 });
 
