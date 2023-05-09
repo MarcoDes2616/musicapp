@@ -1,41 +1,73 @@
-const Course = require("../../models/Course")
-const Student = require("../../models/Student")
+const Album = require("../../models/Album")
+const Artist = require("../../models/Artist")
+const Genre = require("../../models/Genre")
 
-const createData = async() => {
+
+const createDataArtist = async() => {
     const data = [
         {
-            "firstName": "Marco",
-            "lastName": "Cardenas",
-            "birthday": "1983-04-05",
-            "program": "Ingenieria Mecánica"
+            "name": "Marc Anthony",
+            "country": "Puerto Rico",
+            "formationYear": 1983,
+            "image": "image"
         },
         {
-            "firstName": "Luis",
-            "lastName": "Sanchez",
-            "birthday": "1983-10-29",
-            "program": "Ingenieria Eléctrica"
+            "name": "Juan Luis Guerra",
+            "country": "Puerto Rico",
+            "formationYear": 1983,
+            "image": "image"
         }
     ]
 
-    await Student.bulkCreate(data)
+    await Artist.bulkCreate(data)
 }
 
-const createDataCourse = async() => {
+const createDataAlbum = async() => {
     const data = [
         {
-            name: "Testing",
-            credits: 5
+            "name": "Mas",
+            "image": "image",
+            "releaseYear": 1983,
         },
         {
-            name: "Node js",
-            credits: 4
+            "name": "Menos",
+            "releaseYear": 1983,
+            "image": "image"
         }
     ]
 
-    await Course.bulkCreate(data)
+    await Album.bulkCreate(data)
+}
+
+const createDataSong = async() => {
+    const data = [
+        {
+            name: "Fuego de noche"
+        },
+        {
+            name: "Nieve de dia"
+        }
+    ]
+
+    await Album.bulkCreate(data)
+}
+
+const createDataGenre = async() => {
+    const data = [
+        {
+            name: "Baladas"
+        },
+        {
+            name: "Pop"
+        }
+    ]
+
+    await Genre.bulkCreate(data)
 }
 
 module.exports = {
-    createData,
-    createDataCourse
+    createDataArtist,
+    createDataGenre,
+    createDataAlbum,
+    createDataSong
 };
