@@ -21,9 +21,6 @@ const Artist = sequelize.define('artist', {
     }
 });
 
-Artist.belongsToMany(Genre, { through: "artistGenre"})
-Genre.belongsToMany(Artist, { through: "artistGenre"})
-
 
 
 module.exports = Artist;

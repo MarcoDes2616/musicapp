@@ -4,7 +4,7 @@ const Artist = require('../models/Artist');
 const Song = require('../models/Song');
 
 const getAll = catchError(async(req, res) => {
-    const results = await Album.findAll();
+    const results = await Album.findAll({include: [Artist, Song]});
     return res.json(results);
 });
 
@@ -15,7 +15,7 @@ const create = catchError(async(req, res) => {
 
 const getOne = catchError(async(req, res) => {
     const { id } = req.params;
-    const result = await Album.findByPk(id);
+    const result = await Album.findByPk(id,{include: [Artist, Song]});
     if(!result) return res.sendStatus(404);
     return res.json(result);
 });
@@ -36,10 +36,19 @@ const update = catchError(async(req, res) => {
     return res.json(result[1][0]);
 });
 
+const setAlbumArtist = catchError(async(req, res) => {
+    const { id } = req.params;
+    const result = await Album.findByPk(id);
+    await result.setArtists(req.body)
+    const artist = getArtists()
+    return res.sendStatus(artist);
+});
+
 module.exports = {
     getAll,
     create,
     getOne,
     remove,
-    update
+    update,
+    setAlbumArtist
 }

@@ -6,7 +6,11 @@ const Album = sequelize.define('album', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    release_year: {
+    image: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    releaseYear: {
         type: DataTypes.INTEGER,
         allowNull: false
     }

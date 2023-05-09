@@ -5,14 +5,6 @@ const Song = sequelize.define('song', {
     name: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    durantion: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    album: {
-        type: DataTypes.INTEGER,
-        allowNull: false
     }
 });
 

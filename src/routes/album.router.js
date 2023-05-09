@@ -1,4 +1,4 @@
-const { getAll, create, getOne, remove, update } = require('../controllers/album.controllers');
+const { getAll, create, getOne, remove, update, setAlbumArtist } = require('../controllers/album.controllers');
 const express = require('express');
 
 const albumRouter = express.Router();
@@ -11,5 +11,8 @@ albumRouter.route('/:id')
     .get(getOne)
     .delete(remove)
     .put(update);
+
+albumRouter.route("/:id/artists")
+    .post(setAlbumArtist)
 
 module.exports = albumRouter;
