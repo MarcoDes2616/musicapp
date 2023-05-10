@@ -13,6 +13,10 @@ const Album = sequelize.define('album', {
     releaseYear: {
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+    artistId: {
+        type: DataTypes.INTEGER,
+        allowNull: true
     }
 });
 

@@ -42,13 +42,11 @@ const createDataAlbum = async() => {
             "name": "Mas",
             "image": "image",
             "releaseYear": 1983,
-            "artistId": 1
         },
         {
             "name": "Menos",
             "releaseYear": 1983,
-            "image": "image",
-            "artistId": 1
+            "image": "image"
         }
     ]
 

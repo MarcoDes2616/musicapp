@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
 const Genre = require('./Genre');
 
-const Artist = sequelize.define('artist', {
+const Artist = sequelize.define('artists', {
     name: {
         type: DataTypes.TEXT,
         allowNull: false

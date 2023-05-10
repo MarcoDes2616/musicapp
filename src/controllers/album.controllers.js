@@ -39,9 +39,9 @@ const update = catchError(async(req, res) => {
 const setAlbumArtist = catchError(async(req, res) => {
     const { id } = req.params;
     const result = await Album.findByPk(id);
-    await result.setArtists(req.body)
-    const artist = getArtists()
-    return res.sendStatus(artist);
+    await result.setArtist(req.body)
+    // const artist = await result.getArtist()
+    return res.status(201).json(result.artist);
 });
 
 module.exports = {
