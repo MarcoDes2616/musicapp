@@ -30,7 +30,7 @@ test("POST /artists should return status 201", async() => {
 })
 
 test("POST /:id/genres should return status 201", async() =>{
-    const genre = await Genre.create(dataCourse);
+    const genre = await Genre.create(dataGenre);
     const res = await request(app).post(`/artists/${artistId}/genres`).send([genre.id]);
     await genre.destroy()
     expect(res.statusCode).toBe(201);

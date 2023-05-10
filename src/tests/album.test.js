@@ -1,27 +1,32 @@
-// const request = require("supertest")
-// const app = require("../app");
-// require("../models")
+const request = require("supertest")
+const app = require("../app");
+require("../models")
 
-// let genreId;
-// let data = {
-//     name: "Ska",
-// }
+let albumId;
+let data = {
+    "name": "entre",
+    "releaseYear": 1983,
+    "image": "image",
+    "artistId": 1
+}
 
 // let dataCourse = {
 //     name: "React js",
 //     credits: 3
 // }
 
-// test("GET /genres should return status 200", async() => {
-//     const res = await request(app).get("/genres");
-//     expect(res.statusCode).toBe(200);
-//     expect(res.body).toHaveLength(2);
-//     expect(res.body[0].courses).toBeDefined()
-// })
+test("GET /albums should return status 200", async() => {
+    const res = await request(app).get("/albums");
+    console.log(res.body);
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toHaveLength(2);
+    // expect(res.body[0].artist).toBeDefined()
+    // expect(res.body[0].songs).toBeDefined()
+})
 
-// test("POST /students should return status 201", async() => {
-//     const res = await request(app).post("/students").send(data);
-//     studentId = res.body.id
+// test("POST /albums should return status 201", async() => {
+//     const res = await request(app).post("/albums").send(data);
+//     albumId = res.body.id
 //     expect(res.statusCode).toBe(201);
 //     expect(res.body.name).toBe(data.name)
 // })
@@ -34,20 +39,21 @@
 //     expect(res.body.length).toBe(1)
 // })
 
-// test("GET /students/:id to getOne should return status 200", async() => {
-//     const res = await request(app).get(`/students/${studentId}`);
+// test("GET /albums/:id to getOne should return status 200", async() => {
+//     const res = await request(app).get(`/albums/${albumId}`);
 //     expect(res.statusCode).toBe(200);
 //     expect(res.body.name).toBe(data.name)
-//     expect(res.body.courses).toBeDefined()
+//     expect(res.body.artist).toBeDefined()
+//     expect(res.body.songs).toBeDefined()
 // })
 
-// test("PUT /students/:id should return status 201", async() => {
-//     const res = await request(app).put(`/students/${studentId}`).send({"program": "Programacion"});
+// test("PUT /albums/:id should return status 201", async() => {
+//     const res = await request(app).put(`/albums/${albumId}`).send({"program": "Programacion"});
 //     expect(res.statusCode).toBe(200);
 //     expect(res.body.program).toBe("Programacion")
 // })
 
-// test("DELETE /students/:id should return status 204", async() => {
-//     const res = await request(app).delete(`/students/${studentId}`);
+// test("DELETE /albums/:id should return status 204", async() => {
+//     const res = await request(app).delete(`/albums/${albumId}`);
 //     expect(res.statusCode).toBe(204);
 // })

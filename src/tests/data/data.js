@@ -4,6 +4,19 @@ const Genre = require("../../models/Genre")
 const Song = require("../../models/Song")
 
 
+const createDataGenre = async() => {
+    const data = [
+        {
+            name: "Baladas"
+        },
+        {
+            name: "Pop"
+        }
+    ]
+
+    await Genre.bulkCreate(data)
+}
+
 const createDataArtist = async() => {
     const data = [
         {
@@ -29,11 +42,13 @@ const createDataAlbum = async() => {
             "name": "Mas",
             "image": "image",
             "releaseYear": 1983,
+            "artistId": 1
         },
         {
             "name": "Menos",
             "releaseYear": 1983,
-            "image": "image"
+            "image": "image",
+            "artistId": 1
         }
     ]
 
@@ -53,18 +68,6 @@ const createDataSong = async() => {
     await Song.bulkCreate(data)
 }
 
-const createDataGenre = async() => {
-    const data = [
-        {
-            name: "Baladas"
-        },
-        {
-            name: "Pop"
-        }
-    ]
-
-    await Genre.bulkCreate(data)
-}
 
 module.exports = {
     createDataArtist,
