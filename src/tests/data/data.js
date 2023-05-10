@@ -1,6 +1,7 @@
 const Album = require("../../models/Album")
 const Artist = require("../../models/Artist")
 const Genre = require("../../models/Genre")
+const Song = require("../../models/Song")
 
 
 const createDataArtist = async() => {
@@ -49,7 +50,7 @@ const createDataSong = async() => {
         }
     ]
 
-    await Album.bulkCreate(data)
+    await Song.bulkCreate(data)
 }
 
 const createDataGenre = async() => {
