@@ -36,7 +36,6 @@ test("POST /:id/artists should return status 201", async() =>{
     const artist = await Artist.create(dataArtist);
     const res = await request(app).post(`/albums/${albumId}/artists`).send([artist.id]);
     await artist.destroy()
-    console.log(res.body);
     expect(res.statusCode).toBe(201);
     expect(res.body.length).toBe(1)
 })

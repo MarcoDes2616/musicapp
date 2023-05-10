@@ -11,6 +11,7 @@ test("GET /genres should return status 200", async() => {
     const res = await request(app).get("/genres");
     expect(res.statusCode).toBe(200);
     expect(res.body).toHaveLength(2);
+    expect(res.body[0].artists).toBeDefined()
 })
 
 test("POST /genres should return status 201", async() => {
@@ -24,6 +25,7 @@ test("GET /genres/:id to getOne should return status 200", async() => {
     const res = await request(app).get(`/genres/${genreId}`);
     expect(res.statusCode).toBe(200);
     expect(res.body.name).toBe(data.name)
+    expect(res.body.artists).toBeDefined()
 })
 
 test("PUT /genres/:id should return status 201", async() => {
