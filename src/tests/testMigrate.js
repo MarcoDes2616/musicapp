@@ -4,16 +4,17 @@ const {
     createDataGenre,
     createDataAlbum,
     createDataSong
-} = require('./createData/data');
+} = require('./data/data');
+require("../models")
 
 
 const main = async() => {
     try{
         await sequelize.sync({ force: true });
-        await createDataAlbum()
-        await createDataArtist()
-        await createDataSong()
         await createDataGenre()
+        await createDataArtist()
+        await createDataAlbum()
+        await createDataSong()
         process.exit();
     } catch(error){
         console.log(error);

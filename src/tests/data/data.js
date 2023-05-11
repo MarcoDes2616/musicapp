@@ -1,6 +1,7 @@
 const Album = require("../../models/Album")
 const Artist = require("../../models/Artist")
 const Genre = require("../../models/Genre")
+const Song = require("../../models/Song")
 
 
 const createDataArtist = async() => {
@@ -28,11 +29,13 @@ const createDataAlbum = async() => {
             "name": "Mas",
             "image": "image",
             "releaseYear": 1983,
+            "artistId": 1
         },
         {
             "name": "Menos",
             "releaseYear": 1983,
-            "image": "image"
+            "image": "image",
+            "artistId": 1
         }
     ]
 
@@ -42,14 +45,16 @@ const createDataAlbum = async() => {
 const createDataSong = async() => {
     const data = [
         {
-            name: "Fuego de noche"
+            name: "Fuego de noche",
+            albumId: 1
         },
         {
-            name: "Nieve de dia"
+            name: "Nieve de dia",
+            albumId: 1
         }
     ]
 
-    await Album.bulkCreate(data)
+    await Song.bulkCreate(data)
 }
 
 const createDataGenre = async() => {

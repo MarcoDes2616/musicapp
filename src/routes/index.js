@@ -6,12 +6,12 @@ const albumRouter = require('./album.router');
 const router = express.Router();
 
 // colocar las rutas aquí
-router.use("/api/v1/genres", genreRouter)
+router.use("/genres", genreRouter)
 
-router.use("/api/v1/artists", artistRouter)
+router.use("/artists", artistRouter)
 
-router.use("/api/v1/songs", songRouter)
+router.use("/songs", songRouter)
 
-router.use("/api/v1/albums", albumRouter)
+router.use("/albums", albumRouter)
 
 module.exports = router;
