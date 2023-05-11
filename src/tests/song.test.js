@@ -6,13 +6,15 @@ require("../models")
 
 let songId;
 let data = {
-    name: "Fuego de noche"
+    name: "denuevo",
 }
+
 let dataGenre = {
-    name: "Skap"
+    name: "genre",
 }
+
 let dataArtist = {
-    "name": "Juan Luis Guerra",
+    "name": "Marc Anthony",
     "country": "Puerto Rico",
     "formationYear": 1983,
     "image": "image"
@@ -60,9 +62,9 @@ test("GET /songs/:id to getOne should return status 200", async() => {
 })
 
 test("PUT /songs/:id should return status 201", async() => {
-    const res = await request(app).put(`/songs/${songId}`).send({"name": "Song"});
+    const res = await request(app).put(`/songs/${songId}`).send({"name": "denuevo"});
     expect(res.statusCode).toBe(200);
-    expect(res.body.name).toBe("Song")
+    expect(res.body.name).toBe("denuevo")
 })
 
 test("DELETE /songs/:id should return status 204", async() => {

@@ -5,7 +5,6 @@ const {
     createDataAlbum,
     createDataSong
 } = require('./data/data');
-require("../models")
 
 
 const main = async() => {

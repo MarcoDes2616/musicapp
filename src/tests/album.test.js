@@ -5,10 +5,11 @@ require("../models")
 
 let albumId;
 let data = {
-    "name": "Mas",
-    "image": "image",
+    "name": "entre",
     "releaseYear": 1983,
+    "image": "image",
 }
+
 let dataArtist = {
     "name": "Juan Luis Guerra",
     "country": "Puerto Rico",
@@ -48,9 +49,9 @@ test("GET /albums/:id to getOne should return status 200", async() => {
 })
 
 test("PUT /albums/:id should return status 201", async() => {
-    const res = await request(app).put(`/albums/${albumId}`).send({"name": "Otra"});
+    const res = await request(app).put(`/albums/${albumId}`).send({"name": "Otro"});
     expect(res.statusCode).toBe(200);
-    expect(res.body.name).toBe("Otra")
+    expect(res.body.name).toBe("Otro")
 })
 
 test("DELETE /albums/:id should return status 204", async() => {

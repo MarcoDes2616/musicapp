@@ -41,8 +41,8 @@ const setSongGenre = catchError(async(req, res) => {
     const { id } = req.params;
     const result = await Song.findByPk(id)
     await result.setGenres(req.body)
-    const genres = await result.getGenres()
-    return res.status(201).json(genres);
+    const genre = await result.getGenres()
+    return res.status(201).json(genre);
 });
 
 const setSongArtist = catchError(async(req, res) => {
